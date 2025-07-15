@@ -26,7 +26,7 @@ const SignUp = () => {
             data.append("phone", phone);
 
             const response = await axios.post(
-              "https://tommymainoo.pythonanywhere.com/api/signup",
+              "https://tommymainoo.pythonanywhere.com/api/sign_up",
               data
             );
             setLoading('')
@@ -36,7 +36,7 @@ const SignUp = () => {
             
         } catch (error) {
             setLoading('')
-            setError(error.welcome)
+            setError(error.message)
             
         }
 
