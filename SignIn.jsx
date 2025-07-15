@@ -25,6 +25,17 @@ const SignIn = () => {
             );
             setLoading('')
             setSuccess(response.data.welcome)
+             if (response.data.user){
+           // if user is found store details in local storage
+              localStorage.setItem('user',JSON.stringify(response.data.user))
+              //redirect the get product page 
+              navigate('/')
+              setSuccess(response.data.welcome)
+            }  
+        else{
+              setError(response.data.message)
+              
+            }
 
             
         } catch (error) {
