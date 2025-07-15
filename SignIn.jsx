@@ -20,7 +20,7 @@ const SignIn = () => {
             data.append('password',password)
 
             const response = await axios.post(
-              "https://tommymainoo.pythonanywhere.com/api/signup",
+              "https://tommymainoo.pythonanywhere.com/api/sign_up",
               data
             );
             setLoading('')
