@@ -24,7 +24,7 @@ const SignIn = () => {
               data
             );
             setLoading('')
-            setSuccess(response.data.message)
+            setSuccess(response.data.welcome)
 
             
         } catch (error) {
