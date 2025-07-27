@@ -7,8 +7,13 @@ import "bootstrap/dist/js/bootstrap.min.js";
 
 const NavBar = () => {
   return (
-    <div>
-      <div className="col-md-12 ">
+    <div >
+      <div className="col-md-12 " style={{
+        position:"",
+        zIndex: 1000,
+
+
+      }}>
         <nav className="navbar navbar-expand-md  ">
           <a href="/" className="navbar-brand text-light">
             <img
@@ -45,6 +50,8 @@ const NavBar = () => {
               <Link to="/add_products" className="nav-link navi text-light">
                 Add products
               </Link>
+
+              
             </div>
           </div>
         </nav>

@@ -39,7 +39,7 @@ const AddProduct = () => {
     <div className="row1 div">
       <div className="row justify-content-center ">
         <div className="col-md-6 shadow-lg">
-          <h3 className="text-light">
+          <h3 className="text-light mt-5">
             <b>Upload Products</b>
           </h3>
           <form action="" onSubmit={submit}>

@@ -38,11 +38,11 @@ const SignUp = () => {
   };
 
   return (
-    <div className="div row1">
+    <div className="div row1 ">
       <div className="row justify-content-center ">
         <div className=" col-md-6  ">
           <br />
-          <h3 className="text-light">
+          <h3 className="text-light mt-5">
             <b>Sign Up</b>
           </h3>
           <form action="" onSubmit={submit}>

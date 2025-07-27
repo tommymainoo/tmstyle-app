@@ -8,7 +8,11 @@ const MpesaPayment = () => {
   const [error, setError] = useState("");
 
   //lets receive the product in mpesa payment
-  const { Product } = useLocation().state || {};
+  const location = useLocation();
+  const { Product,item } = location.state || {};
+
+  const productData = Product || item;
+ 
 
   const image_url = "https://tommymainoo.pythonanywhere.com/static/images/";
 
@@ -19,11 +23,11 @@ const MpesaPayment = () => {
       // create a data object
       const data = new FormData();
       data.append("phone", phone);
-      data.append("amount", Product.product_cost);
+      data.append("amount", productData.product_cost);
 
       const response = await axios.post(
-      'https://tommymainoo.pythonanywhere.com/api/mpesa_payment',data
-        
+        "https://tommymainoo.pythonanywhere.com/api/mpesa_payment",
+        data
       );
       setMessage("please complete payment in your phone");
     } catch (error) {
@@ -43,14 +47,21 @@ const MpesaPayment = () => {
           {message && <div className="alert alert-success">{message}</div>}
           {error && <div className="alert alert-danger">{error}</div>}
           <br />
-
-          <img src={image_url + Product.product_photo} alt="" height={200} />
-          <p>Name:{Product.product_name}</p>
-          <p>Cost:{Product.product_cost}</p>
+         
+          <img src={image_url + productData.product_photo} alt="" height={200} />
+          <p>
+            Name:{productData.product_name}
+            
+          </p>
+          <p>
+            Cost:{productData.product_cost}
+           
+          </p>
           <input
             type="tel"
             placeholder="Enter Phone Number"
             className="form-control"
+            required
             onChange={(e) => setPhone(e.target.value)}
           />
           <br />
